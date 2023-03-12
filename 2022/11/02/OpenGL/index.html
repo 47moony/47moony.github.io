@@ -6,7 +6,7 @@
 <meta property="og:description" content="环境配置使用Cmake + Clion构建项目  下载安装Cmake和MinGW； 下载GLFW（根据clion编译器版本选择；解压后需要include文件夹和lib-mingw下的glfw3.dll），glad（解压后需要include和src文件）； 新建一个项目，在工程根目录下新建3个文件夹，include,lib,src。把glad和glfw的include文件夹下所有文件夹都复制到刚建的">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-02T08:35:45.000Z">
-<meta property="article:modified_time" content="2023-03-08T13:14:26.923Z">
+<meta property="article:modified_time" content="2023-03-12T16:28:30.058Z">
 <meta property="article:author" content="Moony">
 <meta property="article:tag" content="OpenGL">
 <meta name="twitter:card" content="summary"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/11/02/OpenGL/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
@@ -51,7 +51,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2023-03-08 21:14:26'
+  postUpdate: '2023-03-13 00:28:30'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -140,7 +140,7 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Moony's World</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">OpenGL</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-11-02T08:35:45.000Z" title="Created 2022-11-02 16:35:45">2022-11-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-03-08T13:14:26.923Z" title="Updated 2023-03-08 21:14:26">2023-03-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="OpenGL"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><p>使用Cmake + Clion构建项目</p>
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Moony's World</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">OpenGL</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-11-02T08:35:45.000Z" title="Created 2022-11-02 16:35:45">2022-11-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-03-12T16:28:30.058Z" title="Updated 2023-03-13 00:28:30">2023-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="OpenGL"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><p>使用Cmake + Clion构建项目</p>
 <ol>
 <li>下载安装Cmake和MinGW；</li>
 <li>下载GLFW（根据clion编译器版本选择；解压后需要include文件夹和lib-mingw下的glfw3.dll），glad（解压后需要include和src文件）；</li>
@@ -202,7 +202,7 @@
 <p>直接把o去掉</p>
 <p><img src="/images%5COpenGL%5Cfseek.png" alt="fseek"></p>
 <p>然后报错：</p>
-<p><img src="D:/LearningOpenGL/LearnOpenGLNotes/images/undefined_1.png" alt="undefined_1"></p>
+<p><img src="/images%5COpenGL%5Cundefined_1.png" alt="undefined_1"></p>
 <p>根据<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33199236/article/details/118100009">(84条消息) mingw+cmake编译Assimp库遇到undefine问题_CN_swords的博客-CSDN博客</a>这个帖子重新cmake build文件之后，这时没有去掉BUILD_SHARED_LIBS：</p>
 <p><img src="/images%5COpenGL%5Cmaximum.png" alt="maximum"></p>
 <p>修改：</p>
