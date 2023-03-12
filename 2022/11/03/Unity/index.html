@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Unity | Moony's World</title><meta name="author" content="Moony"><meta name="copyright" content="Moony"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Unity开发案例：Unity2020 3DRPG游戏开发教程|Core核心功能06:SetCursor 设置鼠标指针｜Unity中文课堂_哔哩哔哩_bilibili 单例模式：回顾一下Unity生命周期：(76条消息) Unity简单机制深究之一——谁调的Awake？_Don里个冬的博客-CSDN博客 在游戏开发中，一般各种manager（继承自 MonoBehaviour 的类，实例由Unit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity">
+<meta property="og:url" content="http://example.com/2022/11/03/Unity/index.html">
+<meta property="og:site_name" content="Moony&#39;s World">
+<meta property="og:description" content="Unity开发案例：Unity2020 3DRPG游戏开发教程|Core核心功能06:SetCursor 设置鼠标指针｜Unity中文课堂_哔哩哔哩_bilibili 单例模式：回顾一下Unity生命周期：(76条消息) Unity简单机制深究之一——谁调的Awake？_Don里个冬的博客-CSDN博客 在游戏开发中，一般各种manager（继承自 MonoBehaviour 的类，实例由Unit">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-03T12:44:35.000Z">
+<meta property="article:modified_time" content="2022-11-16T06:57:09.143Z">
+<meta property="article:author" content="Moony">
+<meta property="article:tag" content="Unity">
+<meta name="twitter:card" content="summary"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/11/03/Unity/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Unity',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-16 14:57:09'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Moony's World</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Unity</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-11-03T12:44:35.000Z" title="Created 2022-11-03 20:44:35">2022-11-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-11-16T06:57:09.143Z" title="Updated 2022-11-16 14:57:09">2022-11-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Unity"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Unity开发案例："><a href="#Unity开发案例：" class="headerlink" title="Unity开发案例："></a>Unity开发案例：</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Hf4y1478J/?spm_id_from=333.788&vd_source=8aa1eb6fef86894ebaf390e7548bc050">Unity2020 3DRPG游戏开发教程|Core核心功能06:SetCursor 设置鼠标指针｜Unity中文课堂_哔哩哔哩_bilibili</a></p>
+<h1 id="单例模式："><a href="#单例模式：" class="headerlink" title="单例模式："></a>单例模式：</h1><p>回顾一下Unity生命周期：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42186870/article/details/116463761">(76条消息) Unity简单机制深究之一——谁调的Awake？_Don里个冬的博客-CSDN博客</a></p>
+<p>在游戏开发中，一般各种manager（继承自 MonoBehaviour 的类，实例由Unity 游戏引擎创建，不能通过构造函数创建）在场景中只需要一个实例，并且<strong>它的数据需要在别的类中被访问</strong>（比如后面提到的使用它的内部委托对象进行订阅），那么它就很适合作为一个单例进行使用。</p>
+<ol>
+<li>通常来说，在这个类中声明一个这个类的public <strong>static</strong>对象即可（保证可以<strong>直接通过类访问</strong>，而不需要通过实例化这个类），一般命名为Instance，可以被其他类访问。</li>
+<li>在Awake的时候，要将这个Instance第一时间赋值为this对象（Awake作为MonoBehaviour的第一个生命周期，是在MonoBehaviour实例化的时候调用）；一般同时还要使用 DontDestroyOnLoad() 方法让 manager 在切换游戏场景的时候不会被销毁。</li>
+<li>编译时：先生成Instance static对象（因为一个类只有一个这个static对象，所以不会存在这个static对象的时候再生成一个static对象，无限递归的情况，但是说明这个Instance的Instance对象就是它自己…），然后Unity生成一个manager实例对象，然后调用Awake，在其中将指向这个实例对象的this赋值给Instance。</li>
+<li>为了进行数据的<strong>访问控制</strong>（不能随便读写的数据，通常设置为private static，用一个public static<strong>相同数据类型的属性</strong>作为访问的接口），更常见的做法是使用get&#x2F;set实现私有数据读写：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/02decb837565">C#——get方法和set方法（属性） - 简书 (jianshu.com)</a>：</li>
+</ol>
+<blockquote>
+<p>C#提供一个使用属性的基本模式，该模式<strong>利用get访问器返回私有字段的值</strong>，<strong>利用set访问器对私有字段先验证再赋值</strong>。</p>
+<p>private static Class_ class;</p>
+<p>public static Class_ Class {get {return class;}}</p>
+<p>或者</p>
+<p>public Class_ Class {get &#x3D;&gt; class;}</p>
+</blockquote>
+<p>如果只有get，那就是<strong>只读属性</strong>；如果只有set，那就是<strong>只写属性</strong>。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种写法</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">double</span> r;</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">double</span> R</span><br><span class="line">&#123;</span><br><span class="line">      <span class="keyword">get</span>&#123;</span><br><span class="line">              <span class="keyword">return</span>  r；</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">set</span>&#123;</span><br><span class="line">              <span class="keyword">if</span>(<span class="keyword">value</span> &lt; <span class="number">0</span>) r=<span class="number">0</span>；</span><br><span class="line">              <span class="keyword">else</span> r = <span class="keyword">value</span>；<span class="comment">//value 为C#保留字，代表外部赋给本属性的值</span></span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">double</span> Area&#123;</span><br><span class="line">      <span class="keyword">get</span>&#123;</span><br><span class="line">             <span class="keyword">return</span> <span class="number">3.14</span> * R * R；</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种写法</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">double</span> r;<span class="comment">//字段成员</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">double</span> R<span class="comment">//可读可写属性</span></span><br><span class="line">&#123;</span><br><span class="line">            <span class="keyword">get</span> =&gt; r;<span class="comment">//采用表达式主体定义get访问器</span></span><br><span class="line">            <span class="keyword">set</span> =&gt; r = (<span class="keyword">value</span> &lt;<span class="number">0</span>)？ <span class="number">0</span>：<span class="keyword">value</span>；<span class="comment">//采用表达式主体定义set访问器</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自动实现属性读写：</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Goods</span>  <span class="comment">//商品类</span></span><br><span class="line">&#123;</span><br><span class="line">      <span class="keyword">public</span> <span class="built_in">string</span> Name<span class="comment">//商品类的名称，自动实现的属性</span></span><br><span class="line">       &#123;</span><br><span class="line">          <span class="keyword">get</span>； <span class="keyword">set</span>；</span><br><span class="line"> &#125;</span><br><span class="line">       <span class="keyword">public</span> <span class="built_in">decimal</span> Price</span><br><span class="line">      &#123; </span><br><span class="line">          <span class="keyword">get</span>； <span class="keyword">set</span>；</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Goods x = <span class="keyword">new</span> Good&#123;Name = <span class="string">&quot;华为荣耀手机&quot;</span>， Price = <span class="number">1895</span>；&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="更通俗的理解："><a href="#更通俗的理解：" class="headerlink" title="更通俗的理解："></a>更通俗的理解：</h2><p>一个单例中：</p>
+<ol>
+<li>需要一个private的自己属性(this)以及一个public替身属性；</li>
+<li>这个替身代替真正的单例在别的类中被访问，从而实现对真正的单例的读写控制。</li>
+</ol>
+<h1 id="委托和事件："><a href="#委托和事件：" class="headerlink" title="委托和事件："></a>委托和事件：</h1><ol>
+<li>委托可以用于实现<strong>观察者模式</strong>。<ol>
+<li>委托有很好的封装性。</li>
+<li>委托的实例化与它的执行是可以在不同的对象中完成的。</li>
+</ol>
+</li>
+<li><strong>Action</strong>是一个c#内部声明的泛型委托，模板T是传入的参数类型，无返回值。</li>
+<li>所有委托类都可以作为一个<strong>event</strong>(事件)被实例化，只要在前面加上event关键字即可。</li>
+</ol>
+<blockquote>
+<p>比如当游戏中点击鼠标使得player发生移动的时候，如果使用编辑器event面板进行管理，那么后期如果需要修改物体那么就需要重新拖动物体，设置函数，非常费时费力。</p>
+<p>如果使用委托，那么就可以直接在player（或者其他需要响应鼠标点击的物体）对应的script中将函数<strong>订阅到鼠标类的委托&#x2F;事件中</strong>，当鼠标点击时，需要调用委托&#x2F;事件，委托&#x2F;事件就会依次执行订阅了该委托&#x2F;事件的函数（类似回调来响应这个点击操作），这样可以将管理委托&#x2F;事件以及订阅委托&#x2F;事件的类解耦，彼此不需要知道具体的实现。</p>
+<p>如果是使用类的多态，那么就产生了层级关系，多个类必须继承自同一个父类，才可以用父类指针调用子类override的同名同参同返回值函数。而订阅委托&#x2F;事件的类<strong>只要保证添加到委托&#x2F;事件内的函数的参数和返回值和委托&#x2F;事件声明时的保持一致</strong>就可以了，可以使用的范围更广。</p>
+</blockquote>
+<ol start="4">
+<li><p>事件是一个封装过的委托，它不能被直接赋值，但是可以添加或取消订阅（+&#x3D; and -&#x3D;）。</p>
+<ol>
+<li><p>保护委托字段，对外不开放，所以外部对象没法直接操作委托。提供了Add和Remove方法，供外部对象订阅事件和取消事件。</p>
+</li>
+<li><p>事件的处理方法在对象外部定义，而事件的执行是在对象的内部，至于事件的触发，何时何地无所谓。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="更通俗的理解：-1"><a href="#更通俗的理解：-1" class="headerlink" title="更通俗的理解："></a>更通俗的理解：</h2><p>实例委托是一个用于<strong>管理</strong>与声明委托相同参数&#x2F;返回值类型的<strong>函数</strong>的一个<strong>实例对象</strong>，这个对象可以被<strong>其他类</strong>函数订阅，订阅后相当于就是<strong>加入了这个函数管理列表</strong>中，当需要使用这个委托的时候（比如鼠标点击），就会依次<strong>调用内部的函数</strong>，执行各个类指定的，需要执行的内容。</p>
+<h2 id="大致使用规则："><a href="#大致使用规则：" class="headerlink" title="大致使用规则："></a>大致使用规则：</h2><blockquote>
+<p>假如已经<strong>声明</strong>一个void Delegate(type1 var1, type2 var2);</p>
+<p>并且<strong>实例化</strong>了一个Delegate delegate;</p>
+<p><strong>委托的赋值：</strong></p>
+<ol>
+<li><p>可以当做参数传递，直接将实参（外部函数）隐式转换成形参（委托）的类型；</p>
+</li>
+<li><p>delegate +&#x3D; function;</p>
+</li>
+<li><p>delegate &#x3D; new Delegate(function);</p>
+</li>
+</ol>
+<p>  或者</p>
+<p>  delegate &#x3D; function;&#x2F;&#x2F; 隐式转换</p>
+<p><strong>委托的调用：</strong>delegate?.invoke(var1, var2);</p>
+<p><strong>?.invoke()：</strong></p>
+<p>若event不为null，则invoke，这是C#6的新语法。 ?.称为空值传播运算符。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="comment">//C# 5</span></span><br><span class="line">&gt;<span class="keyword">var</span> handler = Event;</span><br><span class="line">&gt;<span class="keyword">if</span> (handler != <span class="literal">null</span>)</span><br><span class="line">&gt;&#123;</span><br><span class="line">&gt;handler(source, e);</span><br><span class="line">&gt;&#125;</span><br><span class="line"></span><br><span class="line">&gt;<span class="comment">//C# 6</span></span><br><span class="line">&gt;<span class="keyword">var</span> handler = Event;</span><br><span class="line">&gt;handler?.Invoke(source, e);</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h2 id="委托中，匿名函数的用法"><a href="#委托中，匿名函数的用法" class="headerlink" title="委托中，匿名函数的用法"></a>委托中，匿名函数的用法</h2><h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p><strong>匿名方法表达式</strong>的语法包含如下组成部分。</p>
+<ol>
+<li><p><code>delegate</code>类型关键字。</p>
+</li>
+<li><p>参数列表，如果语句块没有任何参数则可以省略。</p>
+</li>
+<li><p>语句块，它包含了匿名方法的代码。</p>
+<p><strong>delegate ( 参数列表 ) { 代码块 }</strong></p>
+</li>
+</ol>
+<h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><p><strong>lambda表达式</strong>：</p>
+<blockquote>
+<p>&#x2F;&#x2F; <strong>var</strong>作为匿名函数的传入参数</p>
+<p>delegate +&#x3D; var &#x3D;&gt; function内容;</p>
+<p>&#x2F;&#x2F; 若<strong>没有参数</strong>：</p>
+<p>delegate +&#x3D; () &#x3D;&gt; function内容;</p>
+</blockquote>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MyDel del = <span class="built_in">delegate</span> (<span class="built_in">int</span> x) &#123;<span class="keyword">return</span> x+<span class="number">1</span>;&#125;;		<span class="comment">//匿名方法</span></span><br><span class="line">MyDel del = 		(<span class="built_in">int</span> x) =&gt; &#123;<span class="keyword">return</span> x+<span class="number">1</span>;&#125;;	<span class="comment">//Lambda表达式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// lambda表达式的书写方法更加简洁</span></span><br><span class="line">MyDel del = <span class="built_in">delegate</span> (<span class="built_in">int</span> x) &#123;<span class="keyword">return</span> x+<span class="number">1</span>;&#125;;		<span class="comment">//匿名方法</span></span><br><span class="line">MyDel el1 = 		 (<span class="built_in">int</span> x) =&gt; &#123;<span class="keyword">return</span> x+<span class="number">1</span>;&#125;;	<span class="comment">//Lambda表达式</span></span><br><span class="line">MyDel el2 = 		 	 (x) =&gt; &#123;<span class="keyword">return</span> x+<span class="number">1</span>;&#125;;  <span class="comment">//Lambda表达式</span></span><br><span class="line">MyDel el3 = 			  x  =&gt; &#123;<span class="keyword">return</span> x+<span class="number">1</span>;&#125;;	<span class="comment">//Lambda表达式</span></span><br><span class="line">MyDel el4 = 			  x  =&gt; 		x+<span class="number">1</span>	 ;	<span class="comment">//Lambda表达式</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wangqiang3311/p/11201647.html">彻底搞清楚c#中的委托和事件 - micDavid - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Cheng_XZ/article/details/113484878?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-113484878-blog-110972532.pc_relevant_3mothn_strategy_and_data_recovery&spm=1001.2101.3001.4242.1&utm_relevant_index=3">(76条消息) C# 委托、匿名委托、Lambda表达式详解_益生菌冻干粉的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136464385">Unity脚本之C#中的Action委托 - 知乎 (zhihu.com)</a></p>
+<h1 id="socket通信："><a href="#socket通信：" class="headerlink" title="socket通信："></a>socket通信：</h1><h2 id="异步："><a href="#异步：" class="headerlink" title="异步："></a>异步：</h2><p>BeginSend不保证发送成功，发送成功后会回调参数列表中的回调函数（delegate生成，所以可以将函数作为参数进行传递），回调函数中可以使用EndSend来检查实际发送的字节数。接收同理，在接收完成后回调函数进行下一步的处理。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">Moony</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2022/11/03/Unity/">http://example.com/2022/11/03/Unity/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Unity/">Unity</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/11/02/Shader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Shader入门精要</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/11/02/Shader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/" title="Shader入门精要"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-02</div><div class="title">Shader入门精要</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Moony</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Unity%E5%BC%80%E5%8F%91%E6%A1%88%E4%BE%8B%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">Unity开发案例：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">单例模式：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E9%80%9A%E4%BF%97%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">更通俗的理解：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A7%94%E6%89%98%E5%92%8C%E4%BA%8B%E4%BB%B6%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">委托和事件：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E9%80%9A%E4%BF%97%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%9A-1"><span class="toc-number">3.1.</span> <span class="toc-text">更通俗的理解：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E8%87%B4%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99%EF%BC%9A"><span class="toc-number">3.2.</span> <span class="toc-text">大致使用规则：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A7%94%E6%89%98%E4%B8%AD%EF%BC%8C%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-number">3.3.</span> <span class="toc-text">委托中，匿名函数的用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A"><span class="toc-number">3.3.1.</span> <span class="toc-text">方法一：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A"><span class="toc-number">3.3.2.</span> <span class="toc-text">方法二：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%EF%BC%9A"><span class="toc-number">3.4.</span> <span class="toc-text">参考：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socket%E9%80%9A%E4%BF%A1%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">socket通信：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%EF%BC%9A"><span class="toc-number">4.1.</span> <span class="toc-text">异步：</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/03/Unity/" title="Unity"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity"/></a><div class="content"><a class="title" href="/2022/11/03/Unity/" title="Unity">Unity</a><time datetime="2022-11-03T12:44:35.000Z" title="Created 2022-11-03 20:44:35">2022-11-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/02/Shader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/" title="Shader入门精要"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Shader入门精要"/></a><div class="content"><a class="title" href="/2022/11/02/Shader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/" title="Shader入门精要">Shader入门精要</a><time datetime="2022-11-02T11:22:23.000Z" title="Created 2022-11-02 19:22:23">2022-11-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/02/OpenGL/" title="OpenGL"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OpenGL"/></a><div class="content"><a class="title" href="/2022/11/02/OpenGL/" title="OpenGL">OpenGL</a><time datetime="2022-11-02T08:35:45.000Z" title="Created 2022-11-02 16:35:45">2022-11-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/02/c-%E6%80%BB%E7%BB%93/" title="c++总结"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++总结"/></a><div class="content"><a class="title" href="/2022/11/02/c-%E6%80%BB%E7%BB%93/" title="c++总结">c++总结</a><time datetime="2022-11-02T05:49:40.000Z" title="Created 2022-11-02 13:49:40">2022-11-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/02/Dx11/" title="Dx11"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Dx11"/></a><div class="content"><a class="title" href="/2022/11/02/Dx11/" title="Dx11">Dx11</a><time datetime="2022-11-02T05:02:20.000Z" title="Created 2022-11-02 13:02:20">2022-11-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Moony</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

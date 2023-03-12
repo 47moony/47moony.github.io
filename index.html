@@ -1,290 +1,230 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-    
-    <title>Moony&#39;s World</title>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-    
-    
-
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Moony's World</title><meta name="author" content="Moony"><meta name="copyright" content="Moony"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="Moony&#39;s World">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Moony&#39;s World">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="Moony">
 <meta name="twitter:card" content="summary">
-    
-<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
-<link rel="stylesheet" href="/lib/justifiedGallery/justifiedGallery.min.css">
-<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
-
-
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1667315495864">
-    
-    <link rel="stylesheet" href="/css/style.css?v=1667315495864">
-    
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body class="mdui-drawer-body-left">
-    
-    <div id="nexmoe-background">
-        <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg)"></div>
-        <div class="mdui-appbar mdui-shadow-0">
-            <div class="mdui-toolbar">
-                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
-                <div class="mdui-toolbar-spacer"></div>
-                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-                <a href="/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="John Doe"></a>
-            </div>
-        </div>
-    </div>
-    <div id="nexmoe-header">
-        <div class="nexmoe-drawer mdui-drawer" id="drawer">
-    <div class="nexmoe-avatar mdui-ripple">
-        <a href="/" title="John Doe">
-            <img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/avatar.png" alt="John Doe" alt="John Doe">
-        </a>
-    </div>
-    <div class="nexmoe-count">
-        <div><span>Articles</span>2</div>
-        <div><span>Tags</span>1</div>
-        <div><span>Categories</span>0</div>
-    </div>
-    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
-        
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple true" href="/" title="回到首页">
-            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
-            <div class="mdui-list-item-content">
-                回到首页
-            </div>
-        </a>
-        
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博客">
-            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
-            <div class="mdui-list-item-content">
-                关于博客
-            </div>
-        </a>
-        
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/PY.html" title="我的朋友">
-            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
-            <div class="mdui-list-item-content">
-                我的朋友
-            </div>
-        </a>
-        
-    </div>
-    <aside id="nexmoe-sidebar">
-    
-    <div class="nexmoe-widget-wrap">
-    <div class="nexmoe-widget nexmoe-search">
-         
-            <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
-                <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
-            </form>
-         
-    </div>
-</div>
-    
-    <div class="nexmoe-widget-wrap">
-    <div class="nexmoe-widget nexmoe-social">
-        <a class="mdui-ripple" href="https://jq.qq.com/?_wv=1027&k=5CfKHun" target="_blank" mdui-tooltip="{content: 'QQ群'}" style="color: rgb(249, 174, 8);background-color: rgba(249, 174, 8, .1);">
-            <i class="nexmoefont icon-QQ"></i>
-        </a><a class="mdui-ripple" href="https://space.bilibili.com/20238211" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
-            <i class="nexmoefont icon-bilibili"></i>
-        </a><a class="mdui-ripple" href="https://github.com/nexmoe/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
-            <i class="nexmoefont icon-github"></i>
-        </a>
-    </div>
-</div>
-    
-    
-
-    
-    
-  <div class="nexmoe-widget-wrap">
-    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
-      <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 10px;">日语</a>
-    </div>
-    
-  </div>
-
-    
-    <!-- 一言 -->
-
-  <div class="nexmoe-widget-wrap">
-    <h3 class="nexmoe-widget-title">
-      Hitokoto
-    </h3>
-    <div class="nexmoe-widget">
-      <ul class="hitokoto-box">
-        <li id="hitokoto_text_parent" class="hitokoto-text" hitokotoCategory="">
-          <a href="#" id="hitokoto_text">
-            
-          </a>
-          <a href="#" id="hitokoto_error_text" style="display: none;">
-            
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <script>
-    let hitokotoText = document.getElementById('hitokoto_text')
-    let hitokotoErroText = document.getElementById('hitokoto_error_text')
-    let hitokotoCategory = document.getElementById('hitokoto_text_parent').getAttribute('hitokotoCategory')
-    window.onload = function () {
-      let url = 'https://v1.hitokoto.cn'
-      if (hitokotoCategory) {
-        url += '?c=' + hitokotoCategory
-      }
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          hitokotoText.innerText = "「 " + data.hitokoto + " 」 from " + data.from
-          hitokotoText.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-        })
-        .catch((reason) => {
-          console.error(11, reason)
-          hitokotoText.style.display = 'none'
-          hitokotoErroText.style.display = 'block'
-        })
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
     }
-  </script>
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Moony\'s World',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-03-13 00:21:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-</aside>
-    <div class="nexmoe-copyright">
-        &copy; 2022 John Doe
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
-        <br><a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://i.dawnlab.me/c0268c1e6cfd0863d6ba35be1575941a.png" width="150px"></a><script data-ad-client="ca-pub-2058306854838448" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    </div>
-</div><!-- .nexmoe-drawer -->
-    </div>
-    <div id="nexmoe-content">
-        <div class="nexmoe-primary">
-            <section class="nexmoe-posts">
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-    <div class="nexmoe-post">
-        <a href="/2022/11/01/%E7%BB%86%E6%9E%9D%E6%9C%AB%E8%8A%82/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
-                    <img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" alt="细枝末节" loading="lazy">
-                    <h1>细枝末节</h1>
-                </div>
-            
-        </a>
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Moony's World</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Moony's World</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/11/03/Unity/" title="Unity"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/03/Unity/" title="Unity">Unity</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-11-03T12:44:35.000Z" title="Created 2022-11-03 20:44:35">2022-11-03</time></span></div><div class="content">Unity开发案例：Unity2020 3DRPG游戏开发教程|Core核心功能06:SetCursor 设置鼠标指针｜Unity中文课堂_哔哩哔哩_bilibili
+单例模式：回顾一下Unity生命周期：(76条消息) Unity简单机制深究之一——谁调的Awake？_Don里个冬的博客-CSDN博客
+在游戏开发中，一般各种manager（继承自 MonoBehaviour 的类，实例由Unity 游戏引擎创建，不能通过构造函数创建）在场景中只需要一个实例，并且它的数据需要在别的类中被访问（比如后面提到的使用它的内部委托对象进行订阅），那么它就很适合作为一个单例进行使用。
 
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2022年11月01日</a>
-            
-            
-                <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E6%97%A5%E8%AF%AD/" rel="tag">日语</a>
-            
-        </div>
+通常来说，在这个类中声明一个这个类的public static对象即可（保证可以直接通过类访问，而不需要通过实例化这个类），一般命名为Instance，可以被其他类访问。
+在Awake的时候，要将这个Instance第一时间赋值为this对象（Awake作为MonoBehaviour的第一个生命周期，是在MonoBehaviour实例化的时候调用）；一般同时还要使用 DontDestroyOnLoad() 方法让 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/11/02/Shader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/" title="Shader入门精要"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Shader入门精要"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/02/Shader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/" title="Shader入门精要">Shader入门精要</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-11-02T11:22:23.000Z" title="Created 2022-11-02 19:22:23">2022-11-02</time></span></div><div class="content">第二章：渲染流水线概念：渲染需要CPU和GPU的配合共同完成，RTR 3rd将渲染分为应用阶段-&gt;几何阶段-&gt;光栅化阶段，其中：
+应用阶段：
+通常是由CPU的负责实现（开发者进行控制），确定例如：摄像机的设置、场景中的模型参数、光照信息等；
+同时，为了提高渲染性能，需要进行粗粒度的culling，将相机不可见的物体剔除；
+最后，需要为每一个模型设置渲染状态，包括：使用的材质、纹理、shader等。
+这个阶段最重要的是输出渲染所需要的几何信息：渲染图元。
 
-        <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    
-        <a><i class="nexmoefont icon-areachart"></i>约2.7k字</a>
-        <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要10分钟</a>
-    
-</div>
+几何阶段：确定绘制的图元是什么、如何绘制、在哪里绘制；通常在GPU上进行。
 
-        <article>
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2022/11/01/hello-world/">
-            
-                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
-                    <img src="https://cdn.jsdelivr.net/gh/nexmoe/nexmoe.github.io@latest/images/cover/5c3aec85a4343.jpg" alt="Hello World" loading="lazy">
-                    <h1>Hello World</h1>
-                </div>
-            
-        </a>
+进行逐顶点、逐多边形操作；
+将顶点左边变换到屏幕空间中，再交给光栅器进行处理；
 
-        <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2022年11月01日</a>
-            
-            
-        </div>
+光栅化阶段：在GPU上，使用上阶段传递的数据产生屏幕上的像素，绘制最终的图像。
 
-        <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
-    
-        <a><i class="nexmoefont icon-areachart"></i>约75字</a>
-        <a><i class="nexmoefont icon-time-circle-fill"></i>预计需要1分钟</a>
-    
-</div>
+决定每个渲染图元中哪些像素需要被绘制在屏幕上；
+对上一个阶段得到的逐顶点参数进行插值，然后进行逐像素处理。
 
-        <article>
-            
-        </article>
-    </div>
-    
-</section>
+CPU和GPU的通信：应用阶段：
+把数据加载到显存中。
+硬盘-&gt;RAM-&gt;VRAM（显卡访问显存更快）
 
-            <div class="nexmoe-post-right">
-              <div class="nexmoe-fixed">
-                  <div class="nexmoe-tool"> 
-                    
-                      
-                    
-                      <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
-                  </div>
-              </div>
-            </div>
-        </div>
-    </div>
-     
-    <div id="nexmoe-search-space">
-        <div class="search-container">
-            <div class="search-header">
-                <div class="search-input-container">
-                    <input class="search-input" type="text" placeholder="Search" oninput="sinput();">
-                </div>
-                <a class="search-close" onclick="sclose();">×</a>
-            </div>
-            <div class="search-body"></div>
-        </div>
-    </div>
+设置渲染状态。 
+设置渲染状态，定义场景中的网格如何被渲染 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/11/02/OpenGL/" title="OpenGL"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OpenGL"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/02/OpenGL/" title="OpenGL">OpenGL</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-11-02T08:35:45.000Z" title="Created 2022-11-02 16:35:45">2022-11-02</time></span></div><div class="content">环境配置使用Cmake + Clion构建项目
 
-    
-<script src="/lib/mdui_043tiny/mdui.js"></script>
-<script src="/lib/jquery.min.js"></script>
-<script src="/lib/justifiedGallery/jquery.justifiedGallery.min.js"></script>
-<script src="/lib/fancybox/fancybox.umd.js"></script>
+下载安装Cmake和MinGW；
+下载GLFW（根据clion编译器版本选择；解压后需要include文件夹和lib-mingw下的glfw3.dll），glad（解压后需要include和src文件）；
+新建一个项目，在工程根目录下新建3个文件夹，include,lib,src。把glad和glfw的include文件夹下所有文件夹都复制到刚建的include文件夹下(glad的include下的glad和KHR文件夹，glfw的include下的GLFW文件夹),把glad下的src下的glad.c复制到刚建的src文件夹下，把glfw的glfw3.dll文件复制到刚建的lib文件夹下。最后一步，别忘了把glfw3.dll复制到程序运行目录，clion编译好的文件默认会放到项目根目录下的cmake-build-debug下，所以要把glfw3.dll也复制到这个文件夹下，不然运行不了；
+Clion的编译器和make程序需要在toolchain中进行设置（都用MinGW的）；
+修改CmakeList.txt，指定头文件所在的路径，并且 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/11/02/c-%E6%80%BB%E7%BB%93/" title="c++总结"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++总结"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/02/c-%E6%80%BB%E7%BB%93/" title="c++总结">c++总结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-11-02T05:49:40.000Z" title="Created 2022-11-02 13:49:40">2022-11-02</time></span></div><div class="content">static（全局&#x2F; 局部&#x2F; 成员）基本定义：C++ static静态成员函数详解 (biancheng.net)
+(76条消息) C++程序员应了解的那些事（55）静态成员函数没有this指针，不与类的实例（对象）“挂钩”【即不能声明为const、volatile、virtual】_so~what的博客-CSDN博客_为什么静态成员函数没有this指针
+(76条消息) c++调用静态函数的方法_ComputerInBook的博客-CSDN博客_c++调用静态方法
 
+static函数只能访问static成员变量；
+static成员变量会被所有对象，包括派生类对象共享；
+static成员变量只能在类外进行初始化（除了静态常量成员可以在类内初始化），类外定义不用加static；
+普通成员函数可以访问所有成员，它有this指针，编译器会在成员函数的参数列表第一位加上Class this；
+静态成员函数没有this指针，不与类的实例（对象）“挂钩”，所以C++静态成员函数不能声明为const、volatile、virtual。
+可以通过类名访问static函数&#x2F;成 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/11/02/Dx11/" title="Dx11"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Dx11"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/02/Dx11/" title="Dx11">Dx11</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-11-02T05:02:20.000Z" title="Created 2022-11-02 13:02:20">2022-11-02</time></span></div><div class="content">2022.10.07Yaw Pitch Roll：(75条消息) 【OpenGL】摄像机实现理解每个公式_FancyJam的博客-CSDN博客_glm::normalize
+参考计算出了Rroll * Rpitch * RYaw，然后分别乘forward[0, 0, 1, 0]以及up[0, 1, 0, 0]，得到旋转之后的forward和up，然后叉乘计算出right。
+但是目前存在一个问题，有些角度之后移动pitch和yaw会反向。
 
- 
+总结：
+目前讨论的所有变换都是在世界坐标系下展开的。
+世界坐标系是一个以(0, 0, 0)为原点，一组标准正交基{(1, 0, 0), (0, 1, 0), (0, 0, 1)}为轴构成的。
+旋转矩阵的推导：
 
-<script async src="/js/app.js?v=1667315495865"></script>
+首先选择特殊的点A(1, 0, 0)，B(0, 1, 0)，C(0, 0, 1)在旋转相应角度之后的坐标A’，B’，C’，然后通过这2个变换前后的坐标逆向推导出旋转矩阵R。
+逆向推导过程中可以发现，旋转之后的点坐标A’，B’，C’，其实就 &#x3D;&#x3D; 旋转矩阵R中按列排序的部分：第一列是A’，第二列是B’，第三列是C’。又因为， ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/11/01/%E7%BB%86%E6%9E%9D%E6%9C%AB%E8%8A%82/" title="细枝末节"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="细枝末节"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/01/%E7%BB%86%E6%9E%9D%E6%9C%AB%E8%8A%82/" title="细枝末节">细枝末节</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-11-01T13:58:22.000Z" title="Created 2022-11-01 21:58:22">2022-11-01</time></span></div><div class="content">句子结构首先，日语句子组成结构：1.主谓结构①名词谓语句彼女は 一人っ子です。
+主语 谓语
+②形容词谓语句桜は きれいです。
+主语 谓语
+③动词谓语句(自动词)子どもは 遊んでいます。
+主语 谓语
+2.主宾谓结构(他动词)斉藤さんが 部屋を 掃除します。
+主语 宾语 谓语
+3.主补谓结构①主语＋补语＋谓语呉さんは 電車で 通勤します。
+主语 补语 谓语
+②主语＋补语＋宾语＋谓语彼は 弟に スイッチを くれた。
+主语 补语 宾语 谓语
+4.主状谓结构①主语＋状语＋谓语彼女は 静かに 座っている。
+主语 状语 谓语
+②主语＋宾语＋状语＋谓语私は ラジオを 静かに 聞いていた。
+主语 宾语 状语 谓语
+第二，日语的句子成分：1.主语：是判断句的主体或表示性质、状态、动作行为、存在的主体的成分。
+主语的识别：主语通常位于句子开头，多用提示助词「は」「も」和主格助词「が」。分析长句子应先观察是否有「は」，若有则「は」之前一般是主语。句子的开头有「が」出现，不一定是主句的主语，有可能是修饰主语的定语句（见定语部分）或主语句的小主语。
+◇香菜ちゃんが笑わなくなったのはあなた達のせいだ。
+「は」所提示 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/11/01/GAMES101/" title="GAMES101"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GAMES101"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/01/GAMES101/" title="GAMES101">GAMES101</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-11-01T13:13:51.000Z" title="Created 2022-11-01 21:13:51">2022-11-01</time></span></div><div class="content">GAMES101Studies for GAMES101.
+Hw01向量绕任意轴旋转的简单推导 | Sulley图形学中有关旋转的一个问题是，一个（三维空间的）向量绕一个任意轴旋转若干角度后的角度是什么。本文简单进行推导，给出显式结果。
+方法一：向量分解推导过程首先介绍一个最容易理解的方法——向量分解。假设要旋转的向量是p，要旋转的轴是n，是一个单位向量，要旋转的角度是θ。再设旋转后的轴是p′。
+现在我们把p分解为两个向量，一个平行于n，另一个垂直于n，即：p&#x3D;p⊥+p∥容易知道，平行于n的分向量p∥就是p在n上的投影（推导过程略）：p∥&#x3D;(n⋅p)n从而就能得到p⊥：p⊥&#x3D;p−p∥同样地可以将旋转后的向量分解：p′&#x3D;p⊥′+p∥′显然，旋转后的向量对应的平行分量p∥′是不变的：p∥′&#x3D;p∥这里的关键在于求垂直分量p⊥′。
 
+将向量分解为一个平行向量和一个垂直向量
+根据已知的旋转轴n，我们就知道它对应的平面V，而向量p与p′的垂直分量就在该平面内。该平面的维度是2，因此只需要找到两个基向量，就可以通过这两个基向量的线性组合表示该平面的任 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/11/01/hello-world/" title="Hello World"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/01/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-11-01T13:12:14.442Z" title="Created 2022-11-01 21:12:14">2022-11-01</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
 
+More info: Writing
+Run server1$ hexo server
 
-<script>
-	$(".justified-gallery").justifiedGallery({
-		rowHeight: 160,
-		margins: 10,
-	});
-</script>
+More info: Server
+Generate static files1$ hexo generate
 
+More info: Generating
+Deploy to remote sites1$ hexo deploy
 
-    
-
-
-
-
-
-</body>
-
-</html>
+More info: Deployment
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Moony</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/03/Unity/" title="Unity"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity"/></a><div class="content"><a class="title" href="/2022/11/03/Unity/" title="Unity">Unity</a><time datetime="2022-11-03T12:44:35.000Z" title="Created 2022-11-03 20:44:35">2022-11-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/02/Shader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/" title="Shader入门精要"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Shader入门精要"/></a><div class="content"><a class="title" href="/2022/11/02/Shader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/" title="Shader入门精要">Shader入门精要</a><time datetime="2022-11-02T11:22:23.000Z" title="Created 2022-11-02 19:22:23">2022-11-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/02/OpenGL/" title="OpenGL"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OpenGL"/></a><div class="content"><a class="title" href="/2022/11/02/OpenGL/" title="OpenGL">OpenGL</a><time datetime="2022-11-02T08:35:45.000Z" title="Created 2022-11-02 16:35:45">2022-11-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/02/c-%E6%80%BB%E7%BB%93/" title="c++总结"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++总结"/></a><div class="content"><a class="title" href="/2022/11/02/c-%E6%80%BB%E7%BB%93/" title="c++总结">c++总结</a><time datetime="2022-11-02T05:49:40.000Z" title="Created 2022-11-02 13:49:40">2022-11-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/02/Dx11/" title="Dx11"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Dx11"/></a><div class="content"><a class="title" href="/2022/11/02/Dx11/" title="Dx11">Dx11</a><time datetime="2022-11-02T05:02:20.000Z" title="Created 2022-11-02 13:02:20">2022-11-02</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/DirectX-11/" style="font-size: 1.1em; color: #999">DirectX 11</a> <a href="/tags/OpenGL/" style="font-size: 1.1em; color: #999">OpenGL</a> <a href="/tags/Unity/" style="font-size: 1.5em; color: #99a9bf">Unity</a> <a href="/tags/c/" style="font-size: 1.1em; color: #999">c++</a> <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/" style="font-size: 1.1em; color: #999">图形学</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 1.1em; color: #999">日语</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">November 2022</span><span class="card-archive-list-count">8</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">8</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-12T16:21:32.204Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Moony</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
