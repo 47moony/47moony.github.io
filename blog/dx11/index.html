@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Moony's World Blog"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.18.1"><title>Dx11</title><style>.post[data-astro-cid-7jjqptxk]{background:#fff;border:3px solid #000;box-shadow:8px 8px #000;padding:40px}header[data-astro-cid-7jjqptxk]{border-bottom:4px solid #000;margin-bottom:40px;padding-bottom:20px}h1[data-astro-cid-7jjqptxk]{font-size:3rem;margin:0 0 10px}.meta[data-astro-cid-7jjqptxk]{font-family:JetBrains Mono,monospace;font-weight:700;color:#f30}.prose[data-astro-cid-7jjqptxk]{line-height:1.8;font-size:1.1rem}.prose[data-astro-cid-7jjqptxk] h2[data-astro-cid-7jjqptxk]{font-size:2rem;margin-top:2em}.prose[data-astro-cid-7jjqptxk] p[data-astro-cid-7jjqptxk]{margin-bottom:1.5em}
+</style>
+<link rel="stylesheet" href="/_astro/_slug_.B0UhF9Ds.css"></head> <body> <header class="header" data-astro-cid-3ef6ksr2> <div class="header-inner" data-astro-cid-3ef6ksr2> <a href="/" class="logo" data-astro-cid-3ef6ksr2> <span class="logo-mark" data-astro-cid-3ef6ksr2> <span class="mark-a" data-astro-cid-3ef6ksr2></span> <span class="mark-b" data-astro-cid-3ef6ksr2></span> </span>
+Moony's World
+</a> <nav data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Home</a></nav> </div> </header>  <main> <article class="post" data-astro-cid-7jjqptxk> <header data-astro-cid-7jjqptxk> <h1 data-astro-cid-7jjqptxk>Dx11</h1> <div class="meta" data-astro-cid-7jjqptxk> <time datetime="2022-11-02T05:02:20.000Z" data-astro-cid-7jjqptxk> Nov 2, 2022 </time> </div> </header> <div class="prose" data-astro-cid-7jjqptxk> <h1 id="20221007">2022.10.07</h1>
+<h2 id="yaw-pitch-roll">Yaw Pitch Roll：</h2>
+<p><a href="https://blog.csdn.net/qq_18718337/article/details/125507695">(75条消息) 【OpenGL】摄像机实现理解每个公式_FancyJam的博客-CSDN博客_glm::normalize</a></p>
+<p>参考计算出了Rroll * Rpitch * RYaw，然后分别乘forward[0, 0, 1, 0]以及up[0, 1, 0, 0]，得到旋转之后的forward和up，然后叉乘计算出right。</p>
+<p>但是目前存在一个问题，有些角度之后移动pitch和yaw会反向。</p>
+<p><img src="/images/Dx11/%E6%97%8B%E8%BD%AC.png" alt="旋转"></p>
+<p>总结：</p>
+<p>目前讨论的所有变换都是在世界坐标系下展开的。</p>
+<p>世界坐标系是一个以(0, 0, 0)为原点，一组标准正交基{(1, 0, 0), (0, 1, 0), (0, 0, 1)}为轴构成的。</p>
+<p>旋转矩阵的推导：</p>
+<ol>
+<li>首先选择特殊的点A(1, 0, 0)，B(0, 1, 0)，C(0, 0, 1)在旋转相应角度之后的坐标A’，B’，C’，然后通过这2个变换前后的坐标<strong>逆向</strong>推导出旋转矩阵R。</li>
+<li>逆向推导过程中可以发现，旋转之后的点坐标A’，B’，C’，其实就 == 旋转矩阵R中<strong>按列排序</strong>的部分：第一列是A’，第二列是B’，第三列是C’。又因为，坐标系的三个轴向量的尾点就是A，B，C，因此，变换之后的A’，B’，C’就是旋转后的三个轴的尾点，即<strong>新的轴在世界坐标系下的表示</strong>。</li>
+<li>因此，<strong>旋转矩阵R == 新坐标轴在世界坐标系下的表示，按列排序而成的矩阵M</strong>。</li>
+<li>结合从一个空间变换到另一个空间的过渡矩阵M（Shader精要有推导；只考虑旋转），就可以发现，<strong>这个M就是旋转矩阵R</strong>。</li>
+</ol>
+<p>$$
+世界坐标轴x,y,z分别={(1, 0, 0)^T, (0, 1, 0)^T, (0, 0, 1)^T}<br>
+<br>
+∵[?]_{3*3}<em>x=x’<br>
+∴[?]的第一列=x’<br>
+以此类推[?]的第二、三列，得到R<br>
+<br>
+R</em>世界坐标轴x,y,z=新的轴在世界坐标系下的表示x’,y’,z’<br>
+R=[x’,y’,z’按列排序]
+$$</p>
+<h2 id="warning解决万向节死锁">Warning!!!解决万向节死锁：</h2>
+<p>四元数：<a href="https://blog.csdn.net/xiaoma_bk/article/details/79082629">(75条消息) 四元数与欧拉角（Yaw、Pitch、Roll）的转换_xiaoma_bk的博客-CSDN博客_四元数转欧拉角</a></p>
+<p>Yaw/ Pitch/ Roll三个角是可以<strong>直接累加</strong>的，可以这么理解：</p>
+<p>在进行了旋转之后，<strong>移动不会改变旋转的角度</strong>，假设我们已知摄像机的位置，那么就可以先移动回原点，之后再旋转摄像机坐标系轴到世界坐标系的位置。反过来，就是先进行旋转，然后进行移动，旋转各个轴只会增加各个角的角度，所以是直接累加的，并不需要做什么别的变换。</p>
+<h1 id="20221102">2022.11.02</h1>
+<p>将顶点数据以及索引数据整理到头文件character.h中。</p>
+<p>因为顶点数据过多，将其定义为堆上的数据。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><code>1 2</code></td><td><code>// character.h GameApp::VertexPosColor* vertices = new GameApp::VertexPosColor[] {...}</code></td></tr></tbody></table>
+<p>定义一个static函数(类可以直接访问)将其返回，别忘了使用之后需要delete[]。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><code>1 2</code></td><td><code>// character.h static GameApp::VertexPosColor* CreateCharacterVertics()</code></td></tr></tbody></table>
+<p>在GameApp.cpp中使用的时候，需要将其copy到栈上的内存，否则设置顶点缓冲区描述会出错：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><code>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</code></td><td><code>// GameApp.cpp // 设置三角形顶点 VertexPosColor* newVertices = character::CreateCharacterVertics(); VertexPosColor vertices[793]; memcpy(vertices, newVertices, 793 * sizeof(VertexPosColor)); delete[] newVertices; ...  // ****************** // 索引数组 // WORD* newIndices = character::CreateCharacterIndices(); WORD indices[2361]; memcpy(indices, newIndices, 2361 * sizeof(WORD)); delete[] newIndices;</code></td></tr></tbody></table> </div> </article> </main> <footer data-astro-cid-sz7xmlte> <div class="footer-inner" data-astro-cid-sz7xmlte> <div class="footer-deco" data-astro-cid-sz7xmlte> <span class="deco-line-h" style="width: 48px; margin: 0 auto;" data-astro-cid-sz7xmlte></span> </div> <p class="copy" data-astro-cid-sz7xmlte>&copy; 2026 Moony</p> <p class="sub" data-astro-cid-sz7xmlte>Built with Astro</p> </div> </footer>  <script type="module">const t=new IntersectionObserver(e=>{e.forEach(r=>{r.isIntersecting&&(r.target.classList.add("visible"),t.unobserve(r.target))})},{threshold:.1,rootMargin:"0px 0px -30px 0px"});document.querySelectorAll(".reveal, .reveal-left, .reveal-scale").forEach(e=>t.observe(e));</script> </body> </html>  
